@@ -1,3 +1,4 @@
+package shapes;
 import Line.LineClass;
 import point.Point;
 
