@@ -5,10 +5,13 @@ import point.Point;
 
 public class Parallelogram extends Trapezium{
 
-	public Parallelogram(Point nPoint1, Point nPoint2, Point nPoint3, Point nPoint4) throws Exception {
+	public Parallelogram(Point nPoint1, Point nPoint2, Point nPoint3, Point nPoint4) {
 		super(nPoint1, nPoint2, nPoint3, nPoint4);
+		try{
 		if (!Parallelogram.isParallelogram(nPoint1, nPoint2, nPoint3, nPoint4)){
 			throw new ShapeException(this.toString(),nPoint1, nPoint2, nPoint3, nPoint4);
+		}}catch(ShapeException se){
+			
 		}
 		
 	}
