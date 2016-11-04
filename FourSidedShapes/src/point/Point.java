@@ -32,7 +32,7 @@ public class Point {
 	
 	@Override
 	public String toString(){
-		String string = "X:" +this.getX() + ", Y:" +this.getY();
+		String string = "( X:" +this.getX() + ", Y:" +this.getY() + ")";
 		return string;
 	}
 	
