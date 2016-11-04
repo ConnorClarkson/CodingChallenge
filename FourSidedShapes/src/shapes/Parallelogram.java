@@ -1,5 +1,5 @@
 package shapes;
 
-public class Parallelogram {
+public class Parallelogram extends Trapezium{
 
 }
