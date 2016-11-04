@@ -18,7 +18,7 @@ public class Rectangle extends Parallelogram {
 		}
 	}
 
-	public boolean isRectangle(Quad q1) {
+	public static boolean isRectangle(Quad q1) {
 
 		if ((q1.getSide1().getLength() == q1.getSide3().getLength())
 				&& (q1.getSide2().getLength() == q1.getSide4().getLength())) {
