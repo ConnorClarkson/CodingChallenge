@@ -1,3 +1,4 @@
+package shapes;
 import Line.LineClass;
 import point.Point;
 
@@ -8,10 +9,10 @@ public abstract class Quad {
 	private Point point2;
 	private Point point3;
 	private Point point4;
-	private double side1;
-	private double side2;
-	private double side3;
-	private double side4;
+	private LineClass side1;
+	private LineClass side2;
+	private LineClass side3;
+	private LineClass side4;
 	
 	//constructor
 	public Quad(Point nPoint1, Point nPoint2, Point nPoint3, Point nPoint4){
@@ -19,14 +20,10 @@ public abstract class Quad {
 		this.point2 = nPoint2;
 		this.point3 = nPoint3;
 		this.point4 = nPoint4;
-		LineClass line1 = new LineClass(point1, point2);
-		LineClass line2 = new LineClass(point2, point3);
-		LineClass line3 = new LineClass(point3, point4);
-		LineClass line4 = new LineClass(point4, point1);
-		this.side1 = line1.getLength();
-		this.side2 = line2.getLength();
-		this.side3 = line3.getLength();
-		this.side4 = line4.getLength();
+		this.side1 = new LineClass(point1, point2);
+		this.side2 = new LineClass(point2, point3);
+		this.side3 = new LineClass(point3, point4);
+		this.side4 = new LineClass(point4, point1);
 	}
 	
 	//getArea method
@@ -34,7 +31,7 @@ public abstract class Quad {
 	
 	//method to get perimeter
 	public double getPerimeter(){
-		double perimeter = side1+side2+side3+side4;
+		double perimeter = side1.getLength()+side2.getLength()+side3.getLength()+side4.getLength();
 		return perimeter;
 	}
 	
@@ -63,30 +60,22 @@ public abstract class Quad {
 	public void setPoint4(Point point4) {
 		this.point4 = point4;
 	}
-	public double getSide1() {
+	public LineClass getSide1() {
 		return side1;
 	}
-	public void setSide1(double side1) {
-		this.side1 = side1;
-	}
-	public double getSide2() {
+
+	public LineClass getSide2() {
 		return side2;
 	}
-	public void setSide2(double side2) {
-		this.side2 = side2;
-	}
-	public double getSide3() {
+
+	public LineClass getSide3() {
 		return side3;
 	}
-	public void setSide3(double side3) {
-		this.side3 = side3;
-	}
-	public double getSide4() {
+
+	public LineClass getSide4() {
 		return side4;
 	}
-	public void setSide4(double side4) {
-		this.side4 = side4;
-	}
+
 	
 	
 	
