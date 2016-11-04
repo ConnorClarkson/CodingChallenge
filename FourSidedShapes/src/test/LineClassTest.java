@@ -5,10 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import Line.LineClass;
+import point.Point;
 
 public class LineClassTest {
-	double[] p1 = {10.0,5.0};
-	double[] p2 = {15.0,5.0};
+	Point p1 = new Point(10, 5);
+	Point p2 = new Point(15, 5);
 	@Test
 	public void testLineClass() {
 		
@@ -21,7 +22,7 @@ public class LineClassTest {
 	public void testGetLenght(){
 		
 		LineClass line = new LineClass(p1, p2);
-		assertEquals(5, line.getLength(p1, p2));
+		assertEquals(5, line.getLength());
 		
 	
 	}
@@ -29,7 +30,7 @@ public class LineClassTest {
 	public void testGetSlope(){
 		LineClass line = new LineClass(p1,p2);
 		LineClass line1 = new LineClass(p1,p2);
-		assertEquals(0, line.getSlope(line, line1));
+		assertEquals(0, line.getSlope());
 		
 	}
 
