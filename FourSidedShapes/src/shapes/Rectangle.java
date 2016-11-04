@@ -8,7 +8,7 @@ public class Rectangle extends Parallelogram {
 		super(nPoint1, nPoint2, nPoint3, nPoint4);
 
 		try {
-			if (isRectangle(this)) {
+			if (Rectangle.isRectangle(this)) {
 			} else {
 				throw new ShapeException(this.toString(), nPoint1, nPoint2, nPoint3, nPoint4);
 			}
@@ -39,6 +39,7 @@ public class Rectangle extends Parallelogram {
 		} else
 			return false;
 	}
+
 	
 	public double getArea(){
 		double area= this.getSide1().getLength()*this.getSide2().getLength();
