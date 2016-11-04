@@ -1,5 +1,5 @@
 package shapes;
 
-public class parallelogram {
+public class Parallelogram {
 
 }
