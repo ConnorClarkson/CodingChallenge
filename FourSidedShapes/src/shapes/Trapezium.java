@@ -24,9 +24,9 @@ public class Trapezium extends Quad {
 	public static Boolean isTrapezium(Quad shape) {
 
 		if (((shape.getSide1().findSlope() == shape.getSide3().findSlope())
-				&& !(shape.getSide2().findSlope() == shape.getSide4().findSlope()))
-				|| !(shape.getSide1().findSlope() == shape.getSide3().findSlope())
-						&& (shape.getSide2().findSlope() == shape.getSide4().findSlope())) {
+				|| (shape.getSide2().findSlope() == shape.getSide4().findSlope()))
+				/*|| !(shape.getSide1().findSlope() == shape.getSide3().findSlope())
+						&& (shape.getSide2().findSlope() == shape.getSide4().findSlope())*/) {
 			return true;
 		}
 
@@ -59,9 +59,9 @@ public class Trapezium extends Quad {
 	}
 
 	@Override
-	public void getArea() {
+	public double getArea() {
 		// TODO Auto-generated method stub
-
+		return 0;
 	}
 
 	@Override
