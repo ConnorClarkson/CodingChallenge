@@ -1,3 +1,4 @@
+import Line.LineClass;
 
 public abstract class Quad {
 	
@@ -17,26 +18,23 @@ public abstract class Quad {
 		this.point2 = nPoint2;
 		this.point3 = nPoint3;
 		this.point4 = nPoint4;
-		Line line1 = new Line(point1, point2);
-		Line line2 = new Line(point2, point3);
-		Line line3 = new Line(point3, point4);
-		Line line4 = new Line(point4, point1);
+		LineClass line1 = new LineClass(point1, point2);
+		LineClass line2 = new LineClass(point2, point3);
+		LineClass line3 = new LineClass(point3, point4);
+		LineClass line4 = new LineClass(point4, point1);
 		this.side1 = line1.getLength();
 		this.side2 = line2.getLength();
 		this.side3 = line3.getLength();
 		this.side4 = line4.getLength();
-
-		
 	}
 	
+	//getArea method
+	public abstract getArea();
+	
 	//method to get perimeter
-	public double getPerimeter{
-		
-		double A = line1.getLength();
-		double B = line2.getLength();
-		double C = line3.getLength();
-		double D = line4.getLength();
-		double perimeter = A+B+C+D;
+	public double getPerimeter(){
+		double perimeter = side1+side2+side3+side4;
+		return perimeter;
 	}
 	
 	//getters and setters
