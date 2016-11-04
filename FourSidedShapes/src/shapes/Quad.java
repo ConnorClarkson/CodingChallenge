@@ -34,6 +34,7 @@ public abstract class Quad {
 	// method to get perimeter
 	public double getPerimeter() {
 		double perimeter = side1.getLength() + side2.getLength() + side3.getLength() + side4.getLength();
+
 		return perimeter;
 	}
 
