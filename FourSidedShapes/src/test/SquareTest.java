@@ -10,7 +10,7 @@ import shapes.Square;
 public class SquareTest {
 
 	@Test
-	public void testParallelogram() {
+	public void testSquare() {
 		Point p1 = new Point(0, 0);
 		Point p2 = new Point(5, 0);
 		Point p3 = new Point(5, 5);
@@ -20,7 +20,7 @@ public class SquareTest {
 	}
 	
 	@Test
-	public void testIsParallelogram(){
+	public void testIsSquare(){
 		Point p1 = new Point(0, 0);
 		Point p2 = new Point(5, 0);
 		Point p3 = new Point(5, 5);
@@ -30,7 +30,7 @@ public class SquareTest {
 	}
 	
 	@Test
-	public void testIsNotParallelogram(){
+	public void testIsNotSquare(){
 		Point p1 = new Point(0, 0);
 		Point p2 = new Point(5, 5);
 		Point p3 = new Point(10, 7);
@@ -40,7 +40,7 @@ public class SquareTest {
 	}
 	
 	@Test
-	public void testParallelogramArea(){
+	public void testSquareArea(){
 		Point p1 = new Point(0, 0);
 		Point p2 = new Point(5, 0);
 		Point p3 = new Point(5, 5);
