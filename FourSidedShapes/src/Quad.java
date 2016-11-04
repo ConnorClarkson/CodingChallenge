@@ -1,67 +1,66 @@
+import Line.LineClass;
+import point.Point;
 
 public abstract class Quad {
 	
 	//attributes - coordinates as an array 
-	private double[] point1 = new double[2];
-	private double[] point2 = new double[2];
-	private double[] point3 = new double[2];
-	private double[] point4 = new double[2];
+	private Point point1;
+	private Point point2;
+	private Point point3;
+	private Point point4;
 	private double side1;
 	private double side2;
 	private double side3;
 	private double side4;
 	
 	//constructor
-	public Quad(double[] nPoint1, double[] nPoint2, double[] nPoint3, double[] nPoint4){
+	public Quad(Point nPoint1, Point nPoint2, Point nPoint3, Point nPoint4){
 		this.point1 = nPoint1;
 		this.point2 = nPoint2;
 		this.point3 = nPoint3;
 		this.point4 = nPoint4;
-		Line line1 = new Line(point1, point2);
-		Line line2 = new Line(point2, point3);
-		Line line3 = new Line(point3, point4);
-		Line line4 = new Line(point4, point1);
+		LineClass line1 = new LineClass(point1, point2);
+		LineClass line2 = new LineClass(point2, point3);
+		LineClass line3 = new LineClass(point3, point4);
+		LineClass line4 = new LineClass(point4, point1);
 		this.side1 = line1.getLength();
 		this.side2 = line2.getLength();
 		this.side3 = line3.getLength();
 		this.side4 = line4.getLength();
-
-		
 	}
 	
+	//getArea method
+	public abstract void getArea();
+	
 	//method to get perimeter
-	public double getPerimeter{
-		
-		double A = line1.getLength();
-		double B = line2.getLength();
-		double C = line3.getLength();
-		double D = line4.getLength();
-		double perimeter = A+B+C+D;
+	public double getPerimeter(){
+		double perimeter = side1+side2+side3+side4;
+		return perimeter;
 	}
 	
 	//getters and setters
-	public double[] getPoint1() {
+	public Point getPoint1() {
 		return point1;
 	}
-	public void setPoint1(double[] point1) {
+	public void setPoint1(Point point1) {
 		this.point1 = point1;
 	}
-	public double[] getPoint2() {
+	public Point getPoint2() {
 		return point2;
 	}
-	public void setPoint2(double[] point2) {
+	public void setPoint2(Point point2) {
 		this.point2 = point2;
 	}
-	public double[] getPoint3() {
+	public Point getPoint3() {
 		return point3;
 	}
-	public void setPoint3(double[] point3) {
+	public void setPoint3(Point point3) {
 		this.point3 = point3;
 	}
-	public double[] getPoint4() {
+	public Point getPoint4() {
 		return point4;
 	}
-	public void setPoint4(double[] point4) {
+	public void setPoint4(Point point4) {
 		this.point4 = point4;
 	}
 	public double getSide1() {
