@@ -7,7 +7,12 @@ public class Square extends Rectangle {
 
 	public Square(Point nPoint1, Point nPoint2, Point nPoint3, Point nPoint4){
 		super(nPoint1, nPoint2, nPoint3, nPoint4);
-		// TODO Auto-generated constructor stub
+		try{
+			if (!Parallelogram.isParallelogram(nPoint1, nPoint2, nPoint3, nPoint4)){
+				throw new ShapeException(this.toString(),nPoint1, nPoint2, nPoint3, nPoint4);
+			}}catch(ShapeException se){
+				
+			}
 	}
 	
 	public static boolean isSquare(Point p1, Point p2, Point p3, Point p4){
@@ -25,6 +30,10 @@ public class Square extends Rectangle {
 			}
 		}
 		return b;
+	}
+	
+	public double getArea(){
+		return this.getSide1().getLength()*this.getSide1().getLength();
 	}
 	
 
