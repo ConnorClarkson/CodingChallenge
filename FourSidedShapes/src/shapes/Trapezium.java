@@ -24,9 +24,9 @@ public class Trapezium extends Quad {
 	public static Boolean isTrapezium(Quad shape) {
 
 		if (((shape.getSide1().findSlope() == shape.getSide3().findSlope())
-				&& !(shape.getSide2().findSlope() == shape.getSide4().findSlope()))
-				|| !(shape.getSide1().findSlope() == shape.getSide3().findSlope())
-						&& (shape.getSide2().findSlope() == shape.getSide4().findSlope())) {
+				|| (shape.getSide2().findSlope() == shape.getSide4().findSlope()))
+				/*|| !(shape.getSide1().findSlope() == shape.getSide3().findSlope())
+						&& (shape.getSide2().findSlope() == shape.getSide4().findSlope())*/) {
 			return true;
 		}
 
@@ -34,13 +34,34 @@ public class Trapezium extends Quad {
 	}
 
 	public void calculateFourSides() {
-
+		Quad shape = this;
+		
+		if(shape.getSide1().findSlope() == shape.getSide3().findSlope()){
+			if(shape.getSide1().findLength() > shape.getSide3().findLength()){
+				this.longBase = shape.getSide1().findLength();
+				this.shortBase = shape.getSide3().findLength();
+			}
+			else {
+				this.shortBase = shape.getSide1().findLength();
+				this.longBase = shape.getSide3().findLength();
+			}
+				
+		}else if (shape.getSide2().findSlope() == shape.getSide4().findSlope()){
+			if(shape.getSide2().findLength() > shape.getSide4().findLength()){
+				this.longBase = shape.getSide2().findLength();
+				this.shortBase = shape.getSide4().findLength();
+			}
+			else {
+				this.shortBase = shape.getSide2().findLength();
+				this.longBase = shape.getSide4().findLength();
+			}
+		}
 	}
 
 	@Override
-	public void getArea() {
+	public double getArea() {
 		// TODO Auto-generated method stub
-
+		return 0;
 	}
 
 	@Override
