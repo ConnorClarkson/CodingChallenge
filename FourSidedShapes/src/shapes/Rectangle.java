@@ -44,5 +44,10 @@ public class Rectangle extends Parallelogram {
 		double area= this.getSide1().getLength()*this.getSide2().getLength();
 		return area;
 	}
+	
+	@Override
+	public String toString(){
+		return "Rectangle";
+	}
 
 }

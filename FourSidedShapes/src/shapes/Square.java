@@ -36,5 +36,9 @@ public class Square extends Rectangle {
 		return this.getSide1().getLength()*this.getSide1().getLength();
 	}
 	
+	@Override
+	public String toString(){
+		return "Square";
+	}
 
 }
