@@ -21,10 +21,8 @@ public class ParallelogramTest {
 			para1 = new Parallelogram(p1, p2, p3, p4);
 			assertNotNull("Not created", para1);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 	
 	@Test
@@ -45,6 +43,21 @@ public class ParallelogramTest {
 		Point p4 = new Point(5, 0);
 		boolean b = Parallelogram.isParallelogram(p1, p2, p3, p4);
 		assertFalse("Points do make a parallelogram", b);
+	}
+	
+	@Test
+	public void testParallelogramArea(){
+		Point p1 = new Point(0, 0);
+		Point p2 = new Point(5, 5);
+		Point p3 = new Point(10, 5);
+		Point p4 = new Point(5, 0);
+		Parallelogram para1;
+		try {
+			para1 = new Parallelogram(p1, p2, p3, p4);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		para1.getArea();
 	}
 	
 

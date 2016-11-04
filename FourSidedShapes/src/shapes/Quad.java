@@ -27,7 +27,7 @@ public abstract class Quad {
 	}
 	
 	//getArea method
-	public abstract void getArea();
+	public abstract double getArea();
 	
 	//method to get perimeter
 	public double getPerimeter(){
