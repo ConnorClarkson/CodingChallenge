@@ -1,13 +1,15 @@
 package Line;
 
+import point.Point;
+
 public class LineClass {
 
-	double[] p1;
-	double[] p2;
+	Point p1;
+	Point p2;
 	double length;
-	int slope;
+	double slope;
 
-	public LineClass(double[] p1, double[] p2) {
+	public LineClass(Point p1, Point p2) {
 
 		this.p1 = p1;
 		this.p2 = p2;
@@ -15,42 +17,56 @@ public class LineClass {
 		this.slope = findSlope();
 	}
 
-	
-	public double findLength(){
-		double length=0;
-		
-		return length; 
+	public double findLength() {
+		double length = p1.distanceTo(p2);
+		return length;
 	}
-	public int findSlope(){
-		int slope=0;
-		
+
+	public double findSlope() {
+
+		double y = p1.getY() - p2.getY();
+		double x = p1.getX() - p2.getX();
+		double slope;
+
+		try {
+			slope = y / x;
+		} catch (ArithmeticException e) {
+			return Double.POSITIVE_INFINITY;
+		} catch (Exception e){
+			e.printStackTrace();
+			return 0;
+		}
+
 		return slope;
 	}
+
 	/**
 	 * @return the p1
 	 */
-	public double[] getP1() {
+	public Point getP1() {
 		return p1;
 	}
 
 	/**
-	 * @param p1 the p1 to set
+	 * @param p1
+	 *            the p1 to set
 	 */
-	public void setP1(double[] p1) {
+	public void setP1(Point p1) {
 		this.p1 = p1;
 	}
 
 	/**
 	 * @return the p2
 	 */
-	public double[] getP2() {
+	public Point getP2() {
 		return p2;
 	}
 
 	/**
-	 * @param p2 the p2 to set
+	 * @param p2
+	 *            the p2 to set
 	 */
-	public void setP2(double[] p2) {
+	public void setP2(Point p2) {
 		this.p2 = p2;
 	}
 
@@ -61,27 +77,15 @@ public class LineClass {
 		return length;
 	}
 
-	/**
-	 * @param length the length to set
-	 */
-	public void setLength(double length) {
-		this.length = length;
-	}
+
 
 	/**
 	 * @return the slope
 	 */
-	public int getSlope() {
+	public double getSlope() {
 		return slope;
 	}
 
-	/**
-	 * @param slope the slope to set
-	 */
-	public void setSlope(int slope) {
-		this.slope = slope;
-	}
 
 
-	
 }
