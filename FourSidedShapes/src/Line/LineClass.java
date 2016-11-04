@@ -4,29 +4,28 @@ public class LineClass {
 
 	double[] p1;
 	double[] p2;
-
+	double length;
+	int slope;
 
 	public LineClass(double[] p1, double[] p2) {
 
 		this.p1 = p1;
 		this.p2 = p2;
-
+		this.length = findLength();
+		this.slope = findSlope();
 	}
 
-	public double getLength(double[] p1, double[] p2) {
-
-		double xLength = 0;
-		double yLength = 0;
+	
+	public double findLength(){
+		double length=0;
 		
+		return length; 
+	}
+	public int findSlope(){
+		int slope=0;
 		
-		return 0;
+		return slope;
 	}
-
-	public int getSlope(LineClass line1, LineClass line2) {
-		return 0;
-
-	}
-
 	/**
 	 * @return the p1
 	 */
@@ -55,4 +54,34 @@ public class LineClass {
 		this.p2 = p2;
 	}
 
+	/**
+	 * @return the length
+	 */
+	public double getLength() {
+		return length;
+	}
+
+	/**
+	 * @param length the length to set
+	 */
+	public void setLength(double length) {
+		this.length = length;
+	}
+
+	/**
+	 * @return the slope
+	 */
+	public int getSlope() {
+		return slope;
+	}
+
+	/**
+	 * @param slope the slope to set
+	 */
+	public void setSlope(int slope) {
+		this.slope = slope;
+	}
+
+
+	
 }
